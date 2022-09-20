@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+<form method="post" action="/add">
+    login : <input type="text" name="login" id="login" required><br>
+    mdp : <input type="password" name="mdp" id="mdp"><br>
+    mdpVerif : <input type="password" name="mdp2" id="mdp2"><br>
+    nom : <input type="text" name="nom" id="nom"><br>
+    prenom : <input type="text" name="prenom" id="prenom"><br>
+    email : <input type="email" name="email" id="email"><br>
+
+    <button type="submit" name="submit"> ajouter l'eleve</button><br><br><br>
+</form>
+
+{% endblock %}

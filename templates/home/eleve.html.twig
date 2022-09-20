@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+<form method="post" action="/add">
+    <br><button type="submit"> ajouter un eleve</button><br><br><br>
+</form>
+<p>
+<table>
+
+    <tr> <th>Login</th> <th>Nom</th> <th>Prenom</th> <th>Email</th> <th>Supprimer</th> </tr>
+    {% for eleve in eleves %}
+        <tr>
+            <td><a href="/eleve/{{ eleve.getIdEtudiant }}">{{ eleve.getLogin }}</a></td>
+            <td>{{ eleve.getNom }}</td>
+            <td>{{ eleve.getPrenom }}</td>
+            <td>{{ eleve.getEmail }}</td>
+            <td>
+                <form method="post" action="/eleve/{{ eleve.getIdEtudiant }}/del">
+                    <button type="submit" name="submit"> supprimer un eleve</button>
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+</p>
+{% endblock %}
